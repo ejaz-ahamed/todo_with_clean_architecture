@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app_clean_arch/core/themes/app_theme.dart';
-import 'package:todo_app_clean_arch/features/todofeature1/presentation/widgets/add_or_upadate_widget.dart';
+import 'package:todo_app_clean_arch/features/todofeature1/presentation/pages/add_or_upadate_page.dart';
 
 class AddItemButtonWidget extends StatelessWidget {
   const AddItemButtonWidget({super.key});
@@ -13,7 +13,7 @@ class AddItemButtonWidget extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const AddOrUpdateWidget(),
+              builder: (context) => const AddOrUpdatePage(),
             ));
       },
       child: const Icon(

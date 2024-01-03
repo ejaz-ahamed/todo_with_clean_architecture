@@ -5,7 +5,7 @@ part 'todo_entity.freezed.dart';
 @freezed
 class TodoEntity with _$TodoEntity {
   factory TodoEntity({
-    required String id,
+    required int id,
     required String title,
     required bool isChecked,
   }) = _TodoEntity;

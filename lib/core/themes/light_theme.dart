@@ -9,9 +9,11 @@ final _lightTheme = ThemeData(
   brightness: Brightness.light,
   extensions: [
     TodoColorExtension(
-        primary: Colors.deepPurple,
-        secondary: Colors.black,
-        text: Colors.blueGrey),
+      primary: Colors.deepPurple,
+      secondary: Colors.black,
+      text: Colors.blueGrey,
+      mainColor: Colors.blueAccent,
+    ),
     TodoSpaceExtension.fromBaseSpace(8),
   ],
 );
