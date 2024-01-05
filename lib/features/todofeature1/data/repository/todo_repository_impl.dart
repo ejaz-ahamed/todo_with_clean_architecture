@@ -24,14 +24,23 @@ class TodoRepositoryImpl implements TodoRepository {
   }
 
   @override
-  List<TodoEntityModel> getTodo() {
-    return dataSource.getTodo();
+  List<TodoEntity> getTodo() {
+    final todos = dataSource.getTodo();
+    return [
+      for (final todo in todos)
+        TodoEntity(
+          id: todo.id,
+          title: todo.title!,
+          isChecked: todo.isChecked!,
+        )
+    ];
   }
 
   @override
   Future<void> updateTodo(TodoEntity todo) async {
     final todoToUpdate =
-        TodoEntityModel(title: todo.title, isChecked: todo.isChecked);
+        TodoEntityModel(title: todo.title, isChecked: todo.isChecked)
+          ..id = todo.id;
     dataSource.updateTodo(todoToUpdate);
   }
 }

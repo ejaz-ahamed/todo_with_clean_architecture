@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:todo_app_clean_arch/features/todofeature1/domain/entities/todo_entity.dart';
 import 'package:todo_app_clean_arch/features/todofeature1/domain/repository/todo_repository.dart';
 
 final class GetTodoUsecase {
@@ -6,11 +7,13 @@ final class GetTodoUsecase {
 
   GetTodoUsecase({required this.repository});
 
-  Future<void> call() async {
+  Future<List<TodoEntity>> call() async {
     try {
-      repository.getTodo();
+      return repository.getTodo();
     } catch (e) {
       log(e.toString());
     }
+
+    throw 'Cannot get todos';
   }
 }
